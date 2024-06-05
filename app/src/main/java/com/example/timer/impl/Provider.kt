@@ -4,15 +4,15 @@ import kotlin.time.Duration
 
 interface Provider {
     suspend fun onTimerStart(
-        currentTime: Duration,
+        currentTime: Duration, //  Время во сколько стартанул таймер
     )
 
     suspend fun onTimerStop(
-        currentTime: Duration,
+        currentTime: Duration, //  Время сколько работал таймер с последнего запуска
     )
 
     suspend fun syncTime(
-        spendTime: Duration,
+        spendTime: Duration, // суммарное время. Например провайдер на 10 сек. Отправляем 10, 20, 30 и тд
     )
 
     fun getSyncInterval(): Duration
