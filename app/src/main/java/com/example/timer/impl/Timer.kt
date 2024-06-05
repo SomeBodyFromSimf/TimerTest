@@ -1,5 +1,6 @@
 package com.example.timer.impl
 
+import kotlinx.coroutines.CoroutineScope
 import kotlin.time.Duration.Companion.seconds
 
 interface Timer {
@@ -11,6 +12,7 @@ interface Timer {
 }
 
 class TimerImpl(
+    val scope: CoroutineScope,
     val providers: List<Provider> = listOf(
         testProvider("firstProvider", 30.seconds),
         testProvider("secondProvider", 60.seconds),

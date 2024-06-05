@@ -4,12 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.timer.impl.Timer
 import com.example.timer.impl.TimerImpl
 
 class MainActivity : AppCompatActivity() {
 
-    private val timer: Timer = TimerImpl()
+    private val timer: Timer = TimerImpl(lifecycleScope)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
